@@ -29,23 +29,7 @@ t_mat4 ft_mat4_mult_mat4( t_mat4 m, t_mat4 rhs ) {
 	}
 	return res;
 }
-/*
-t_mat4 ft_mat4_mult_mat4(t_mat4 m1, t_mat4 m2)
-{
-  t_mat4 out = ft_mat4_identity();
-  unsigned int row, column, row_offset;
 
-  for (row = 0, row_offset = row * 4; row < 4; ++row, row_offset = row * 4)
-    for (column = 0; column < 4; ++column)
-      out.m[row_offset + column] =
-        (m1.m[row_offset + 0] * m2.m[column + 0]) +
-        (m1.m[row_offset + 1] * m2.m[column + 4]) +
-        (m1.m[row_offset + 2] * m2.m[column + 8]) +
-        (m1.m[row_offset + 3] * m2.m[column + 12]);
-
-  return out;
-}
-*/
 t_mat4 ft_mat4_translate( t_mat4 m, t_vec3 v ) {
 	t_mat4 m_t;
     

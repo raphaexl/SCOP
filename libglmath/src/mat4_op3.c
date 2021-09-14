@@ -17,34 +17,6 @@ t_mat4 ft_quat_to_mat4( t_versor q ) {
 	return (ft_mat4_new( v[0], v[1], v[2], v[3]));
 }
 
-/*t_mat4 ft_mat4_look_at(t_vec3 cam_pos, t_vec3 targ_pos, t_vec3 up) {
-	// inverse translation
-	t_mat4 p = ft_mat4_identity();
-
-	p = ft_mat4_translate( p, (t_vec3){{{-cam_pos.v[0], -cam_pos.v[1], -cam_pos.v[2]}}});
-	//ft_mat4_print(p);
-	//exit(0);
-	// distance vector
-	t_vec3 d = ft_vec3_sub(targ_pos , cam_pos);
-	// forward vector
-	t_vec3 f = ft_vec3_normalize(d);
-	// right vector
-	t_vec3 r = ft_vec3_normalize(ft_vec3_cross( f, up ) );
-	// real up vector
-	t_vec3 u = ft_vec3_normalize(ft_vec3_cross( r, f ) );
-	t_mat4 ori = ft_mat4_identity();
-
-	ori.m[0] = r.v[0];
-	ori.m[4] = r.v[1];
-	ori.m[8] = r.v[2];
-	ori.m[1] = u.v[0];
-	ori.m[5] = u.v[1];
-	ori.m[9] = u.v[2];
-	ori.m[2] = -f.v[0];
-	ori.m[6] = -f.v[1];
-	ori.m[10] = -f.v[2];
-	return (ft_mat4_mult_mat4(ori,  p)); // p * ori;
-}*/
 
 t_mat4 ft_mat4_look_at(t_vec3 eye, t_vec3 target, t_vec3 upDir)
 {
